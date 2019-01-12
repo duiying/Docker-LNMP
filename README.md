@@ -40,7 +40,7 @@ Docker-LNMP
 |----docker-compose.yml                 docker compose 配置文件
 ```
 ### `Docker常用命令`
-**删除所有容器**
-docker rm -f $(docker ps -aq)
-**删除所有镜像**
-docker rmi $(docker images -q)
+**删除所有容器**  
+docker rm -f $(docker ps -aq)  
+**删除所有镜像**  
+docker rmi $(docker images -q)  
