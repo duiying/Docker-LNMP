@@ -9,7 +9,7 @@
 - phpMyAdmin
 - phpRedisAdmin
 
-### 准备
+### `准备`
 ```
 * 安装docker和docker-compose
     yum -y install docker docker-compose

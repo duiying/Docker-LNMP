@@ -1,5 +1,5 @@
 #!/bin/bash
-# @auther <gengxiankun@126.com>
+# @auther <1822581649@qq.com>
 
 echo "info: nginx non-daemon startup"
 nginx -c /etc/nginx/nginx.conf
