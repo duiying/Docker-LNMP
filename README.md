@@ -10,8 +10,12 @@
 - phpRedisAdmin
 
 ### 准备
-**安装docker和docker-compose**  
-yum -y install docker docker-compose
+```
+* 安装docker和docker-compose
+    yum -y install docker docker-compose
+* 启动docker服务
+    service docker start
+```
 ### `快速启动`
 ```
 * 克隆项目
