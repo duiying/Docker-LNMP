@@ -52,6 +52,14 @@ Docker-LNMP
 * 容器编排
     docker-compose up -d
 ```
+### 可能遇到的问题
+```
+# Error信息
+The "https://packagist.phpcomposer.com/packages.json" file could not be down
+# 解决方案
+这是由于composer中国镜像失效, 修改Docker-LNMP/docker/files/cgi/Dockerfile
+https://packagist.phpcomposer.com 改为 https://packagist.laravel-china.org
+```
 
 ### Docker常用命令
 **删除所有容器**  
