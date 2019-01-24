@@ -9,7 +9,7 @@
 - Redis
 - phpMyAdmin
 - phpRedisAdmin
-> 注: 精简版(docker-compose up -f docker-compose-simplify.yml -d)
+> 注: 精简版(docker-compose -f docker-compose-simplify.yml up -d)
 - PHP7.2
 - Nginx
 - MySQL5.6
