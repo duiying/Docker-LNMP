@@ -24,7 +24,9 @@ RUN yum install -y --enablerepo=remi --enablerepo=remi-php72 \
 	gcc \
 	gcc-c++ \
 	make \
-	unzip &&\
+	unzip \ 
+	cronie \
+	crontabs &&\
     mkdir /run/php-fpm/ &&\
     yum clean all
 
@@ -40,5 +42,9 @@ RUN sed -i 's/listen = 127.0.0.1:9000/listen = [::]:9000/p' /etc/php-fpm.d/www.c
 COPY docker-entrypoint.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+RUN sed -i '/session    required   pam_loginuid.so/c\#session    required   pam_loginuid.so' /etc/pam.d/crond
+
+ENTRYPOINT ["/usr/sbin/init"]
 
 CMD ["docker-entrypoint.sh"]
