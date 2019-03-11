@@ -39,7 +39,7 @@ Docker-LNMP
 ### 准备
 ```
 # 安装docker和docker-compose
-    yum install -y epel-release 
+    yum -y install epel-release 
     yum -y install docker docker-compose
 # 启动docker服务
     service docker start
@@ -47,7 +47,7 @@ Docker-LNMP
 ### 快速启动
 ```
 # 克隆项目
-    git clone git@github.com:duiying/Docker-LNMP.git
+    git clone https://github.com/duiying/Docker-LNMP.git
 # 进入目录
     cd Docker-LNMP
 # 容器编排
