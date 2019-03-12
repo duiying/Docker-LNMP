@@ -44,6 +44,4 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 RUN sed -i '/session    required   pam_loginuid.so/c\#session    required   pam_loginuid.so' /etc/pam.d/crond
 
-ENTRYPOINT ["/usr/sbin/init"]
-
 CMD ["docker-entrypoint.sh"]
