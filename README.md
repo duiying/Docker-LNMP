@@ -61,6 +61,8 @@ The "https://packagist.phpcomposer.com/packages.json" file could not be down
 这是由于composer中国镜像失效, 修改Docker-LNMP/docker/files/cgi/Dockerfile
 https://packagist.phpcomposer.com 改为 https://packagist.laravel-china.org
 ```
+### 更新日志
+- cgi容器支持crontab
 
 ### Docker常用命令
 **删除所有容器**  
