@@ -37,6 +37,22 @@ RUN curl -sSL https://getcomposer.org/installer | php &&\
 
 RUN sed -i 's/listen = 127.0.0.1:9000/listen = [::]:9000/p' /etc/php-fpm.d/www.conf &&\
 	sed -i '/listen.allowed_clients = 127.0.0.1/d' /etc/php-fpm.d/www.conf
+	
+RUN wget https://github.com/edenhill/librdkafka/archive/v1.0.0-RC8.tar.gz &&\
+    tar -zxvf v1.0.0-RC8.tar.gz &&\
+	cd librdkafka-1.0.0-RC8 &&\
+	./configure &&\
+	make && make install &&\
+	cd ../ && rm -rf v1.0.0-RC8.tar.gz librdkafka-1.0.0-RC8
+	
+RUN wget https://github.com/arnaud-lb/php-rdkafka/archive/3.0.5.tar.gz &&\
+    tar -zxvf 3.0.5.tar.gz &&\
+	cd php-rdkafka-3.0.5 &&\
+	phpize &&\
+	./configure &&\
+	make && make install &&\
+	sed -i '$a \\n[rdkafka]\nextension=rdkafka.so' /etc/php.ini &&\
+    cd ../ && rm -rf 3.0.5.tar.gz php-rdkafka-3.0.5
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
