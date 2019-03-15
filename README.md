@@ -83,3 +83,6 @@ https://packagist.phpcomposer.com 改为 https://packagist.laravel-china.org
 docker rm -f $(docker ps -aq)  
 **删除所有镜像**  
 docker rmi $(docker images -q)  
+
+### 感谢
+[gengxiankun/dockerfiles](https://github.com/gengxiankun/dockerfiles)
