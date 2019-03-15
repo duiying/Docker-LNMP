@@ -77,6 +77,7 @@ https://packagist.phpcomposer.com 改为 https://packagist.laravel-china.org
 ```
 ### 更新日志
 - cgi容器支持crontab
+- PHP支持rdkafka扩展
 
 ### Docker常用命令
 **删除所有容器**  
