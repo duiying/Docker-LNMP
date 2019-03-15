@@ -44,7 +44,7 @@ Docker-LNMP
 # 启动docker服务
     service docker start
 ```
-### 快速启动
+### 安装
 ```
 # 克隆项目
     git clone https://github.com/duiying/Docker-LNMP.git
@@ -53,6 +53,20 @@ Docker-LNMP
 # 容器编排
     docker-compose up -d
 ```
+### 测试
+执行成功
+```
+Creating cgi ... done
+Creating proxy ... done
+Creating mysql ...
+Creating phpmyadmin ...
+Creating phpredisadmin ...
+Creating cgi ...
+Creating proxy ...
+```
+访问IP, 效果图如下    
+![效果图](https://raw.githubusercontent.com/duiying/img/master/docker-lnmp.png)
+
 ### 可能遇到的问题
 ```
 # Error信息
