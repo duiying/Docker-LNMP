@@ -20,6 +20,7 @@ RUN yum install -y --enablerepo=remi --enablerepo=remi-php72 \
 	php-mysqld \
 	php-bcmath \
 	php-redis \
+	php-process \
 	wget \
 	gcc \
 	gcc-c++ \

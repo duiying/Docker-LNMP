@@ -37,21 +37,33 @@ Docker-LNMP
 |----docker-compose-simplify.yml        docker compose 配置文件(精简版: LNMP+Redis)
 ```
 ### 准备
-```
+```shell
 # 安装docker和docker-compose
-    yum -y install epel-release 
-    yum -y install docker docker-compose
+yum -y install epel-release 
+yum -y install docker docker-compose
+
 # 启动docker服务
-    service docker start
+service docker start
+
+# 配置阿里云docker镜像加速器(建议配置加速器, 可以提升docker拉取镜像的速度)
+mkdir -p /etc/docker
+vim /etc/docker/daemon.json
+# 新增下面内容
+{
+    "registry-mirrors": ["https://8auvmfwy.mirror.aliyuncs.com"]
+}
+# 重新加载配置、重启docker
+systemctl daemon-reload 
+systemctl restart docker 
 ```
 ### 安装
 ```
 # 克隆项目
-    git clone https://github.com/duiying/Docker-LNMP.git
+git clone https://github.com/duiying/Docker-LNMP.git
 # 进入目录
-    cd Docker-LNMP
+cd Docker-LNMP
 # 容器编排
-    docker-compose up -d
+docker-compose up -d
 ```
 ### 测试
 执行成功
@@ -78,6 +90,7 @@ https://packagist.phpcomposer.com 改为 https://packagist.laravel-china.org
 ### 更新日志
 - cgi容器支持crontab
 - PHP支持rdkafka扩展
+- PHP支持POSIX、PCNTL扩展
 
 ### Docker常用命令
 **删除所有容器**  
