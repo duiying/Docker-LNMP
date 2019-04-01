@@ -57,7 +57,7 @@ systemctl daemon-reload
 systemctl restart docker 
 ```
 ### 安装
-```
+```shell
 # 克隆项目
 git clone https://github.com/duiying/Docker-LNMP.git
 # 进入目录
@@ -93,10 +93,12 @@ https://packagist.phpcomposer.com 改为 https://packagist.laravel-china.org
 - PHP支持POSIX、PCNTL扩展
 
 ### Docker常用命令
-**删除所有容器**  
+```shell
+# 删除所有容器
 docker rm -f $(docker ps -aq)  
-**删除所有镜像**  
-docker rmi $(docker images -q)  
+# 删除所有镜像
+docker rmi $(docker images -q)
+```
 
-### 感谢
-[gengxiankun/dockerfiles](https://github.com/gengxiankun/dockerfiles)
+### 参考
+- [https://github.com/gengxiankun/dockerfiles](https://github.com/gengxiankun/dockerfiles)
