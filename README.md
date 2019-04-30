@@ -84,6 +84,7 @@ Creating proxy ...
 ### 学习文档
 - [如何新建一个站点](docs/如何新建一个站点.md)
 - [如何安装yaf扩展](docs/如何安装yaf扩展.md)
+- [如何安装swoole扩展](docs/如何安装swoole扩展.md)
 
 ### 可能遇到的问题
 ```
