@@ -64,6 +64,8 @@ git clone https://github.com/duiying/Docker-LNMP.git
 cd Docker-LNMP
 # 容器编排
 docker-compose up -d
+或
+docker-compose -f docker-compose-simplify.yml up -d
 ```
 ### 测试
 执行成功
@@ -78,6 +80,9 @@ Creating proxy ...
 ```
 访问IP, 效果图如下    
 ![效果图](https://raw.githubusercontent.com/duiying/img/master/docker-lnmp.png)
+
+### 学习文档
+- [docs](docs)
 
 ### 可能遇到的问题
 ```
