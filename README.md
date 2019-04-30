@@ -82,7 +82,8 @@ Creating proxy ...
 ![效果图](https://raw.githubusercontent.com/duiying/img/master/docker-lnmp.png)
 
 ### 学习文档
-- [docs](docs)
+- [如何新建一个站点](docs/如何新建一个站点.md)
+- [如何安装yaf扩展](docs/如何安装yaf扩展.md)
 
 ### 可能遇到的问题
 ```
@@ -96,6 +97,7 @@ https://packagist.phpcomposer.com 改为 https://packagist.laravel-china.org
 - cgi容器支持crontab
 - PHP支持rdkafka扩展
 - PHP支持POSIX、PCNTL扩展
+- 新增学习文档
 
 ### Docker常用命令
 ```shell
