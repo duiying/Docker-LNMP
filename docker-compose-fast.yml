@@ -1,0 +1,89 @@
+version: '3'
+
+services:
+  cgi:
+    container_name: cgi
+    image: duiying/php7.2
+    tty: true
+    restart: always
+    expose:
+      - "9000"
+    volumes:
+      - ./www:/data/www
+      - ./docker/log/cgi:/var/log/php-fpm
+    depends_on:
+      - mysql
+      - redis
+    links:
+      - mysql:mysql
+      - redis:redis
+  proxy:
+    container_name: proxy
+    image: duiying/nginx
+    tty: true
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./www:/data/www
+      - ./docker/config/proxy/conf.d:/etc/nginx/conf.d
+      - ./docker/log/proxy:/var/log/nginx
+    depends_on:
+      - cgi
+    links:
+      - cgi
+  mysql:
+    container_name: mysql
+    image: daocloud.io/library/mysql:5.6
+    restart: always
+    expose:
+      - "3306"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/data/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  redis:
+    container_name: redis
+    image: daocloud.io/library/redis
+    restart: always
+    expose:
+      - "6379"
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./docker/data/redis:/data
+    command: redis-server --appendonly yes 
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: daocloud.io/daocloud/phpmyadmin
+    expose:
+      - '80'
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_ARBITRARY=0
+      - PMA_HOST=mysql
+      # 如果取消下面两行注释, phpmyadmin就不用输入用户名和密码, 可以直接登录
+      # - PMA_USER=root
+      # - PMA_PASSWORD=root
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+  phpredisadmin:
+    container_name: phpredisadmin
+    image: erikdubbelboer/phpredisadmin
+    expose:
+      - '80'
+    ports:
+      - "8081:80"
+    environment:
+      - REDIS_1_HOST=redis
+      - REDIS_1_NAME=redis
+    depends_on:
+      - redis
+    links:
+      - redis:redis
