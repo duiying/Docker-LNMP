@@ -3,7 +3,7 @@ version: '3'
 services:
   cgi:
     container_name: cgi
-    image: duiying/php7.2
+    image: registry.cn-beijing.aliyuncs.com/duiying/php7.2
     tty: true
     restart: always
     expose:
@@ -19,7 +19,7 @@ services:
       - redis:redis
   proxy:
     container_name: proxy
-    image: duiying/nginx
+    image: registry.cn-beijing.aliyuncs.com/duiying/nginx
     tty: true
     restart: always
     ports:
