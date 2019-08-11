@@ -89,12 +89,23 @@ Creating proxy ...
 - [如何安装swoole扩展](docs/如何安装swoole扩展.md)
 
 ### 可能遇到的问题
-```
+```bash
 # Error信息
 The "https://packagist.phpcomposer.com/packages.json" file could not be down
 # 解决方案
 这是由于composer中国镜像失效, 修改Docker-LNMP/docker/files/cgi/Dockerfile
-https://packagist.phpcomposer.com 改为 https://packagist.laravel-china.org
+https://packagist.phpcomposer.com 改为 https://mirrors.aliyun.com/composer/
+```
+
+```bash
+# Error信息
+ERROR: for mysql  Cannot start service mysql: endpoint with name mysql already exists in network docker-lnmp_default
+# 解决方案
+这是由于端口被占用，需要清理此容器的网络占用
+格式：docker network disconnect --force 网络模式 容器名称
+docker network disconnect --force docker-lnmp_default mysql
+检查是否还有其它容器占用
+格式：docker network inspect 网络模式
 ```
 ### 更新日志
 - cgi容器支持crontab
