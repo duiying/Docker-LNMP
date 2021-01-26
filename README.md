@@ -12,12 +12,6 @@
 - phpMyAdmin
 - phpRedisAdmin  
 
-> 注: 精简版（docker-compose-simplify.yml）
-- PHP 7.2
-- Nginx
-- MySQL 5.6
-- Redis  
-
 ### 目录结构
 ```
 Docker-LNMP
@@ -38,7 +32,6 @@ Docker-LNMP
 |--------index.php                      PHP 例程
 |----README.md                          说明文件
 |----docker-compose.yml                 docker compose 配置文件（完整版: LNMP + Redis + phpMyAdmin + phpRedisAdmin）
-|----docker-compose-simplify.yml        docker compose 配置文件（精简版: LNMP + Redis）
 ```
 
 ### 准备
