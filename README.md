@@ -4,7 +4,6 @@
 
 ### 清单
 
-> 注: 完整版（docker-compose.yml、docker-compose-fast.yml）
 - PHP 7.2
 - Nginx
 - MySQL 5.6
