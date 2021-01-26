@@ -1,12 +1,12 @@
-# 如何安装swoole扩展
+# 如何安装 Swoole 扩展
 
-#### 如何安装swoole扩展
+#### 如何安装 Swoole 扩展
 
 ```shell
-# 进入PHP容器
+# 进入 PHP 容器
 [root@localhost Docker-LNMP]# docker exec -it cgi bash
 
-# 解决gcc版本过低的问题
+# 解决 gcc 版本过低的问题
 yum -y install centos-release-scl
 yum -y install devtoolset-7
 scl enable devtoolset-7 bash
@@ -21,11 +21,11 @@ wget https://github.com/swoole/swoole-src/archive/v4.2.1.tar.gz &&\
 	sed -i '$a \\n[swoole]\nextension=swoole.so' /etc/php.ini &&\
 cd ../ && rm -rf v4.2.1.tar.gz swoole-src-4.2.1
 
-# 退出PHP容器
+# 退出 PHP 容器
 [root@510d01c199f5 /]# exit
 exit
 
-# 重启PHP容器
+# 重启 PHP 容器
 [root@localhost Docker-LNMP]# docker restart cgi
 ```
 

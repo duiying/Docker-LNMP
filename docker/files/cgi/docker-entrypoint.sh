@@ -1,5 +1,5 @@
 #!/bin/bash
-# @auther <1822581649@qq.com>
+# @auther <wangyaxiandev@gmail.com>
 
 /usr/sbin/init
 /usr/sbin/crond
