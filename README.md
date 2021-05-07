@@ -112,7 +112,7 @@ docker network disconnect --force docker-lnmp_default mysql
 - PHP 支持 POSIX、PCNTL 扩展
 - 新增学习文档
 
-### Docker 常用命令
+### 如何清理所有容器和镜像？（谨慎操作！这会清除机器下所有容器或镜像）
 
 ```shell
 # 删除所有容器
